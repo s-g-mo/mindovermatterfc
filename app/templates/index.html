@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Over Matter FC</title>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/layout.css" />
+    <link rel="stylesheet" href="/static/css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Mind Over Matter FC</h1>
+      <nav>
+        <a href="/">Home</a> | <a href="/about">About</a> |
+        <a href="/raw-data">Raw Data</a> |
+        <button
+          id="contact-button"
+          aria-label="Copy email address to clipboard"
+        >
+          Contact
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="dashboard-wrapper">
+        <section class="dashboard-container" id="lifetime-container">
+          <h2 class="dashboard-title" id="lifetime-title">
+            Lifetime Stats (Since 2018)
+          </h2>
+          <div class="dashboard-box box" id="lifetime-box">
+            <label for="first-dropdown-menu" class="dropdown-label"
+              >Game Type</label
+            >
+            <select id="first-dropdown-menu" class="dropdown-menu">
+              <option value="All" selected>All</option>
+              <option value="11v11">11v11</option>
+              <option value="7v7">7v7</option>
+              <option value="5v5">5v5</option>
+            </select>
+
+            <div id="doughnut-chart"></div>
+            <div class="metrics-container">
+              <div class="metric">
+                <p class="metric-label" title="Games Played">GP</p>
+                <div class="metric-box box">
+                  <p class="metric-value" id="games-played">--</p>
+                </div>
+              </div>
+              <div class="metric">
+                <p class="metric-label" title="Goals">G</p>
+                <div class="metric-box box">
+                  <p class="metric-value" id="goals-scored">--</p>
+                </div>
+              </div>
+              <div class="metric">
+                <p class="metric-label" title="Goals per Game">GpG</p>
+                <div class="metric-box box">
+                  <p class="metric-value" id="goals-per-game">--</p>
+                </div>
+              </div>
+              <div class="metric">
+                <p class="metric-label" title="Assists">A*</p>
+                <div class="metric-box box">
+                  <p class="metric-value" id="assists">--</p>
+                </div>
+              </div>
+              <div class="metric">
+                <p class="metric-label" title="Assists per Game">ApG*</p>
+                <div class="metric-box box">
+                  <p class="metric-value" id="assists-per-game">--</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="dashboard-asterisk">*Since May 2023</p>
+        </section>
+      </div>
+
+      <div class="dashboard-wrapper">
+        <section class="dashboard-container" id="game-by-game-container">
+          <h2 class="dashboard-title" id="game-by-game-title">
+            Game-by-Game Stats Evolution (Since 2024)
+          </h2>
+          <div class="dashboard-box box" id="game-by-game-box">
+            <label for="second-dropdown-menu" class="dropdown-label"
+              >Game Type</label
+            >
+            <select id="second-dropdown-menu" class="dropdown-menu">
+              <option value="All" selected>All</option>
+              <option value="11v11">11v11</option>
+              <option value="7v7">7v7*</option>
+              <option value="5v5">5v5</option>
+            </select>
+
+            <label
+              for="stat-select-menu"
+              class="dropdown-label"
+              id="stat-dropdown-label"
+              >Stat</label
+            >
+            <select id="stat-select-menu" class="dropdown-menu">
+              <option value="Goals_Per_Game" selected>GpG</option>
+              <option value="Win_Percentage">Win %</option>
+            </select>
+
+            <div id="game-evolution-chart"></div>
+          </div>
+          <p class="dashboard-asterisk">*No 7v7 Game-by-Game Stats Yet</p>
+        </section>
+      </div>
+
+      <div class="dashboard-wrapper">
+        <section class="dashboard-container" id="goals-milestones-container">
+          <div class="milestone-group">
+            <h2 class="dashboard-title" id="goals-title">Personal Goals</h2>
+            <div class="dashboard-box box" id="goals-box">
+              <ul>
+                <li>
+                  Finish higher than last place in table in this year's futsal
+                  campaign (24/25)
+                </li>
+                <li>Double digit goal total for 2025, 11v11 campaign</li>
+                <li>
+                  Contribute 20% of team's total goals in 2025, 11v11 campaign
+                </li>
+                <li>Score a brace in an 11v11 match</li>
+                <li>Score a hat-trick in an 11v11 match</li>
+                <li>Cross 200 matches played across all game types</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="milestone-group">
+            <h2 class="dashboard-title" id="milestones-title">Milestones</h2>
+            <div class="dashboard-box box" id="milestones-box">
+              <ul>
+                <li>Scored in first 11v11 game ever played (2022)</li>
+                <li>Scored first penalty ever taken (2022)</li>
+                <li>Scored a futsal header (2023)</li>
+                <li>3 assists from corner kicks (2023)</li>
+                <li>First time skying a penalty (2023)</li>
+                <li>Scored first 11v11 header (2024)</li>
+                <li>
+                  Contributed 16.21% of team's total goals in 11v11 campaign
+                  (2024)
+                </li>
+                <li>Crossed 100 games played (2024)</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2024 Stephen Mosher</p>
+      <div class="social-icons">
+        <a
+          href="https://www.youtube.com/@MindOverMatterFC"
+          target="_blank"
+          aria-label="YouTube"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/stephen-mosher-514a951b3/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

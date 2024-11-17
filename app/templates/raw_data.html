@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Over Matter FC</title>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/layout.css" />
+    <link rel="stylesheet" href="/static/css/tables.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Mind Over Matter FC</h1>
+      <nav>
+        <a href="/">Home</a> | <a href="/about">About</a> |
+        <a href="/raw-data">Raw Data</a> |
+        <button id="contact-button">Contact</button>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Seasonal Aggregates</h2>
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                {% for col in seasonal_data[0].keys() %}
+                <th>{{ col }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in seasonal_data %}
+              <tr>
+                {% for cell in row.values() %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2>Game Stats</h2>
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                {% for col in game_stats_data[0].keys() %}
+                <th>{{ col }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in game_stats_data %}
+              <tr>
+                {% for cell in row.values() %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 Stephen Mosher</p>
+      <div class="social-icons">
+        <a
+          href="https://www.youtube.com/@MindOverMatterFC"
+          target="_blank"
+          aria-label="YouTube"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/stephen-mosher-514a951b3/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("contact-button")
+        .addEventListener("click", function () {
+          const email = "steve@mindovermatterfc.com";
+          navigator.clipboard
+            .writeText(email)
+            .then(() => {
+              alert("Email address copied to clipboard: " + email);
+            })
+            .catch((err) => {
+              alert("Failed to copy email address: " + err);
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+.dashboard-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 54rem;
+}
+
+.box {
+  display: flex;
+  background-color: rgb(21, 23, 41);
+  border: 5px solid rgb(90, 218, 178);
+  border-radius: 20px;
+}
+
+.dashboard-box {
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#goals-milestones-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 20px;
+}
+
+#lifetime-box {
+  height: 15.625rem;
+  gap: 35px;
+  width: 100%;
+}
+
+#game-by-game-box {
+  height: 31.25rem;
+  padding-right: 40px;
+}
+
+#goals-box,
+#milestones-box {
+  height: 31.25rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+#goals-box ul,
+#milestones-box ul {
+  font-size: 1.2rem;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+#goals-box ul li,
+#milestones-box ul li {
+  margin-bottom: 15px; /* Space between bullets */
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
+  margin: 0px;
+  padding-bottom: 0.5%;
+  color: #4b9cd3;
+}
+
+.dashboard-asterisk {
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin: 0px;
+  padding-top: 1%;
+  align-self: flex-end;
+}
+
+.dropdown-label {
+  position: absolute;
+  top: 15px;
+  right: 130px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 5px;
+  width: 100px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 5px solid rgb(90, 218, 178);
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#stat-select-menu {
+  left: 70px;
+}
+
+#stat-dropdown-label {
+  left: 20px;
+}
+
+#doughnut-chart {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-left: 12px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  cursor: help;
+}
+
+.metric-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-value {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+#game-evolution-chart {
+  align-items: center;
+  margin-top: 60px;
+}
+
+.dashboard-wrapper {
+  transform-origin: top center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .dashboard-wrapper {
+    transform: scale(0.8);
+    margin-top: 20px;
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 480px) {
+  .dashboard-container {
+    width: 40%;
+  }
+
+  .dashboard-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  #lifetime-box {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .metrics-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  /* .svg {
+    position: relative;
+    align-items: center;
+  } */
+
+  #doughnut-chart {
+    margin: 10px 0px;
+  }
+
+  .metric-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .dropdown-label {
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0px;
+    width: 25%;
+  }
+
+  #goals-milestones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .milestone-group {
+    width: 100%;
+    align-items: center;
+  }
+
+  .dashboard-title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  #goals-box,
+  #milestones-box {
+    width: 100%;
+    padding: 10px;
+  }
+}

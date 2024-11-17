@@ -1,0 +1,24 @@
+html,
+body {
+  background-color: rgb(21, 23, 41);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Graphik", Arial, sans-serif;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  color: inherit; /* Automatically take the text color from body */
+}

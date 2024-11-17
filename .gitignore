@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore data files
+/data/*
+!/data/game_stats.csv
+!/data/seasonal_stats.csv
+
+# Ignore node_modules (if applicable)
+/node_modules/
+
+# Ignore compiled static assets
+/static/dist/
