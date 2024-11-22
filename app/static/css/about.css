@@ -29,8 +29,7 @@
   padding: 10px 40px;
 }
 
-/* Small Screens (Phones) */
-@media (max-width: 480px) {
+@media (max-width: 800px) {
   .about-section {
     width: 99.9%;
     line-height: 1.5;
