@@ -164,31 +164,44 @@ async function fetchGameStats() {
 }
 
 function renderStatGraph(gameType, statType) {
-  const data = window.dashboardStats[gameType];
+  const viewportWidth = window.innerWidth;
 
-  const containerWidth = document
-    .querySelector("#game-evolution-chart")
-    .getBoundingClientRect().width;
+  let chartWidth;
+  if (viewportWidth > 1024) {
+    chartWidth = 800;
+  } else if (viewportWidth > 730) {
+    chartWidth = 680;
+  } else if (viewportWidth >= 480) {
+    chartWidth = 330;
+  }
+  console.log("chartwidth", chartWidth);
+
+  let chartHeight;
+  if (chartWidth === 330) {
+    chartHeight = 500;
+  } else {
+    chartHeight = chartWidth / 2;
+  }
 
   d3.select("#game-evolution-chart").selectAll("*").remove();
 
   if (statType === "Goals_Per_Game") {
     renderLineGraph(
-      data,
+      window.dashboardStats[gameType],
       "Goals Per Game",
       "Time",
       "Goals_Per_Game",
-      containerWidth,
-      400
+      chartWidth,
+      chartHeight
     );
   } else if (statType === "Win_Percentage") {
     renderLineGraph(
-      data,
+      window.dashboardStats[gameType],
       "Win %",
       "Time",
       "Win_Percentage",
-      containerWidth,
-      400
+      chartWidth,
+      chartHeight
     );
   }
 }
@@ -319,6 +332,27 @@ function renderLineGraph(
     .attr("fill", "#ffffff")
     .text(yLabel);
 }
+
+function updateGameStatsChart() {
+  const gameType = document.querySelector("#second-dropdown-menu").value;
+  const statType = document.querySelector("#stat-select-menu").value;
+  renderStatGraph(gameType, statType);
+}
+
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    updateGameStatsChart();
+  }, 100)
+);
 
 fetchData();
 fetchGameStats();
