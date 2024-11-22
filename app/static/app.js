@@ -169,15 +169,16 @@ function renderStatGraph(gameType, statType) {
   let chartWidth;
   if (viewportWidth > 1024) {
     chartWidth = 800;
-  } else if (viewportWidth > 730) {
+  } else if (viewportWidth > 730 && viewportWidth <= 1024) {
     chartWidth = 680;
-  } else if (viewportWidth >= 480) {
+  } else if (viewportWidth >= 480 && viewportWidth <= 730) {
     chartWidth = 330;
+  } else {
+    chartWidth = 300;
   }
-  console.log("chartwidth", chartWidth);
 
   let chartHeight;
-  if (chartWidth === 330) {
+  if (chartWidth <= 330) {
     chartHeight = 500;
   } else {
     chartHeight = chartWidth / 2;
