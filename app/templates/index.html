@@ -29,23 +29,25 @@
     </header>
 
     <main>
-      <div class="dashboard-wrapper">
+      <div id="outer-flex-container">
         <section class="dashboard-container" id="lifetime-container">
           <h2 class="dashboard-title" id="lifetime-title">
             Lifetime Stats (Since 2018)
           </h2>
-          <div class="dashboard-box box" id="lifetime-box">
-            <label for="first-dropdown-menu" class="dropdown-label"
-              >Game Type</label
-            >
-            <select id="first-dropdown-menu" class="dropdown-menu">
-              <option value="All" selected>All</option>
-              <option value="11v11">11v11</option>
-              <option value="7v7">7v7</option>
-              <option value="5v5">5v5</option>
-            </select>
-
+          <div class="box" id="lifetime-box">
             <div id="doughnut-chart"></div>
+            <div class="label-menu-container">
+              <label for="first-dropdown-menu" class="dropdown-label"
+                >Game Type</label
+              >
+              <select id="first-dropdown-menu" class="dropdown-menu">
+                <option value="All" selected>All</option>
+                <option value="11v11">11v11</option>
+                <option value="7v7">7v7</option>
+                <option value="5v5">5v5</option>
+              </select>
+            </div>
+
             <div class="metrics-container">
               <div class="metric">
                 <p class="metric-label" title="Games Played">GP</p>
@@ -81,46 +83,48 @@
           </div>
           <p class="dashboard-asterisk">*Since May 2023</p>
         </section>
-      </div>
 
-      <div class="dashboard-wrapper">
         <section class="dashboard-container" id="game-by-game-container">
           <h2 class="dashboard-title" id="game-by-game-title">
             Game-by-Game Stats Evolution (Since 2024)
           </h2>
-          <div class="dashboard-box box" id="game-by-game-box">
-            <label for="second-dropdown-menu" class="dropdown-label"
-              >Game Type</label
-            >
-            <select id="second-dropdown-menu" class="dropdown-menu">
-              <option value="All" selected>All</option>
-              <option value="11v11">11v11</option>
-              <option value="7v7">7v7*</option>
-              <option value="5v5">5v5</option>
-            </select>
+          <div class="box" id="game-by-game-box">
+            <div class="game-by-game-menus-container">
+              <div>
+                <label
+                  for="stat-select-menu"
+                  class="dropdown-label"
+                  id="stat-dropdown-label"
+                  >Stat</label
+                >
+                <select id="stat-select-menu" class="dropdown-menu">
+                  <option value="Goals_Per_Game" selected>GpG</option>
+                  <option value="Win_Percentage">Win %</option>
+                </select>
+              </div>
 
-            <label
-              for="stat-select-menu"
-              class="dropdown-label"
-              id="stat-dropdown-label"
-              >Stat</label
-            >
-            <select id="stat-select-menu" class="dropdown-menu">
-              <option value="Goals_Per_Game" selected>GpG</option>
-              <option value="Win_Percentage">Win %</option>
-            </select>
+              <div>
+                <label for="second-dropdown-menu" class="dropdown-label"
+                  >Game Type</label
+                >
+                <select id="second-dropdown-menu" class="dropdown-menu">
+                  <option value="All" selected>All</option>
+                  <option value="11v11">11v11</option>
+                  <option value="7v7">7v7*</option>
+                  <option value="5v5">5v5</option>
+                </select>
+              </div>
+            </div>
 
             <div id="game-evolution-chart"></div>
           </div>
           <p class="dashboard-asterisk">*No 7v7 Game-by-Game Stats Yet</p>
         </section>
-      </div>
 
-      <div class="dashboard-wrapper">
         <section class="dashboard-container" id="goals-milestones-container">
           <div class="milestone-group">
             <h2 class="dashboard-title" id="goals-title">Personal Goals</h2>
-            <div class="dashboard-box box" id="goals-box">
+            <div class="box" id="goals-box">
               <ul>
                 <li>
                   Finish higher than last place in table in this year's futsal
@@ -139,7 +143,7 @@
 
           <div class="milestone-group">
             <h2 class="dashboard-title" id="milestones-title">Milestones</h2>
-            <div class="dashboard-box box" id="milestones-box">
+            <div class="box" id="milestones-box">
               <ul>
                 <li>Scored in first 11v11 game ever played (2022)</li>
                 <li>Scored first penalty ever taken (2022)</li>
