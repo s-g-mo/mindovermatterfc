@@ -166,19 +166,46 @@ async function fetchGameStats() {
 function renderStatGraph(gameType, statType) {
   const data = window.dashboardStats[gameType];
 
+  const containerWidth = document
+    .querySelector("#game-evolution-chart")
+    .getBoundingClientRect().width;
+
   d3.select("#game-evolution-chart").selectAll("*").remove();
 
   if (statType === "Goals_Per_Game") {
-    renderLineGraph(data, "Goals Per Game", "Time", "Goals_Per_Game");
+    renderLineGraph(
+      data,
+      "Goals Per Game",
+      "Time",
+      "Goals_Per_Game",
+      containerWidth,
+      400
+    );
   } else if (statType === "Win_Percentage") {
-    renderLineGraph(data, "Win %", "Time", "Win_Percentage");
+    renderLineGraph(
+      data,
+      "Win %",
+      "Time",
+      "Win_Percentage",
+      containerWidth,
+      400
+    );
   }
 }
 
-function renderLineGraph(data, yLabel, xLabel, statKey) {
+function renderLineGraph(
+  data,
+  yLabel,
+  xLabel,
+  statKey,
+  width = 800,
+  height = 400
+) {
+  const svgWidth = width;
+  const svgHeight = height;
   const margin = { top: 20, right: 30, bottom: 70, left: 90 };
-  const width = 800 - margin.left - margin.right;
-  const height = 400 - margin.top - margin.bottom;
+  const innerWidth = svgWidth - margin.left - margin.right;
+  const innerHeight = svgHeight - margin.top - margin.bottom;
 
   const parseDate = d3.timeParse("%Y-%m-%d");
 
@@ -193,26 +220,26 @@ function renderLineGraph(data, yLabel, xLabel, statKey) {
   const svg = d3
     .select("#game-evolution-chart")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", svgWidth)
+    .attr("height", svgHeight)
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
   const x = d3
     .scaleTime()
     .domain(d3.extent(parsedData, (d) => d.Date))
-    .range([0, width]);
+    .range([0, innerWidth]);
 
   const y = d3
     .scaleLinear()
     .domain([0, d3.max(parsedData, (d) => d[statKey]) || 1])
     .nice()
-    .range([height, 0]);
+    .range([innerHeight, 0]);
 
   // Add X axis
   svg
     .append("g")
-    .attr("transform", `translate(0,${height})`)
+    .attr("transform", `translate(0,${innerHeight})`)
     .call(d3.axisBottom(x).ticks(5).tickFormat(d3.timeFormat("%b %Y")));
 
   // Add Y axis
@@ -222,7 +249,7 @@ function renderLineGraph(data, yLabel, xLabel, statKey) {
   svg
     .append("g")
     .attr("class", "grid")
-    .call(d3.axisLeft(y).tickSize(-width).tickFormat(""))
+    .call(d3.axisLeft(y).tickSize(-innerWidth).tickFormat(""))
     .selectAll("line")
     .attr("stroke", "#ccc")
     .attr("stroke-dasharray", "4 2")
@@ -261,8 +288,8 @@ function renderLineGraph(data, yLabel, xLabel, statKey) {
     .enter()
     .append("text")
     .filter((d, i) => i === data.length - 1)
-    .attr("x", (d) => x(d.Date) + 5)
-    .attr("y", (d) => y(d[statKey]) - 5)
+    .attr("x", (d) => x(d.Date) - 8)
+    .attr("y", (d) => y(d[statKey]) - 8)
     .text((d) => d[statKey].toFixed(2))
     .attr("font-size", "12px")
     .attr("fill", "#fff");
@@ -271,8 +298,8 @@ function renderLineGraph(data, yLabel, xLabel, statKey) {
   svg
     .append("text")
     .attr("text-anchor", "middle")
-    .attr("x", width / 2)
-    .attr("y", height + 50) // Positioned below the x-axis
+    .attr("x", svgWidth / 2)
+    .attr("y", svgHeight - margin.bottom / 2)
     .attr("font-size", "20px")
     .attr("font-family", "Graphik")
     .attr("font-weight", "bold")
@@ -284,8 +311,8 @@ function renderLineGraph(data, yLabel, xLabel, statKey) {
     .append("text")
     .attr("text-anchor", "middle")
     .attr("transform", `rotate(-90)`)
-    .attr("x", -height / 2) // Center along y-axis
-    .attr("y", -margin.left + 30) // Positioned left of the y-axis
+    .attr("x", -svgHeight / 2 + 40)
+    .attr("y", -margin.left + 40)
     .attr("font-size", "20px")
     .attr("font-family", "Graphik")
     .attr("font-weight", "bold")

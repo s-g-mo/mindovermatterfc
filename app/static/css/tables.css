@@ -9,16 +9,14 @@
   border-collapse: collapse;
   margin-bottom: 2.5rem;
   background-color: rgb(21, 23, 41);
-  color: #ffffff;
   text-align: left;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .styled-table th,
 .styled-table td {
-  padding: 0.625rem;
+  padding: 0.5rem;
   border: 0.156rem solid rgb(90, 218, 178);
-  overflow-wrap: break-word;
   vertical-align: middle;
 }
 
@@ -37,7 +35,7 @@
 
 .styled-table th:not(:last-child),
 .styled-table td:not(:last-child) {
-  width: 7%;
+  min-width: 3rem;
 }
 
 .styled-table th:last-child,
@@ -52,26 +50,31 @@ h2 {
   color: #4b9cd3;
 }
 
-/* @media (max-width: 1024px) {
-  html {
-    height: 225%;
+/* RESPONSIVE SCHEMES */
+@media (max-width: 780px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .hide-on-small {
+    display: none;
+  }
+
+  .styled-table {
+    font-size: 0.8rem;
+    width: 100%;
+    table-layout: auto;
   }
 
   .styled-table th,
   .styled-table td {
-    padding: 0.5rem;
+    padding: 0.25rem;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .styled-table th {
     font-size: 0.8rem;
   }
 }
-
-@media (max-width: 480px) {
-  html {
-    height: 500%;
-  }
-
-  .styled-table th,
-  .styled-table td {
-    padding: 0.5rem;
-    font-size: 0.8rem;
-  }
-} */

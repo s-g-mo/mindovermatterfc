@@ -1,64 +1,4 @@
-.dashboard-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 54rem;
-}
-
-.box {
-  display: flex;
-  background-color: rgb(21, 23, 41);
-  border: 5px solid rgb(90, 218, 178);
-  border-radius: 20px;
-}
-
-.dashboard-box {
-  flex-direction: row;
-  position: relative;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-#goals-milestones-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0 20px;
-}
-
-#lifetime-box {
-  height: 15.625rem;
-  gap: 35px;
-  width: 100%;
-}
-
-#game-by-game-box {
-  height: 31.25rem;
-  padding-right: 40px;
-}
-
-#goals-box,
-#milestones-box {
-  height: 31.25rem;
-  width: 100%;
-  align-items: flex-start;
-}
-
-#goals-box ul,
-#milestones-box ul {
-  font-size: 1.2rem;
-  color: #ffffff;
-  line-height: 1.25;
-}
-
-#goals-box ul li,
-#milestones-box ul li {
-  margin-bottom: 15px; /* Space between bullets */
-}
-
+/* General dashboard styling */
 .dashboard-title {
   font-size: 2rem;
   text-align: left;
@@ -69,28 +9,47 @@
 }
 
 .dashboard-asterisk {
+  margin-top: 5px;
+  text-align: right;
   font-weight: bold;
-  font-size: 0.85rem;
-  margin: 0px;
-  padding-top: 1%;
-  align-self: flex-end;
+}
+
+.box {
+  background-color: rgb(21, 23, 41);
+  border: 5px solid rgb(90, 218, 178);
+  border-radius: 20px;
+}
+
+.metric-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.metric-label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  cursor: help;
+  text-align: center;
+}
+
+.metric-value {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .dropdown-label {
-  position: absolute;
-  top: 15px;
-  right: 130px;
   font-weight: bold;
   font-size: 1.3rem;
-  color: #ffffff;
+  text-align: center;
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  padding: 5px;
-  width: 100px;
   background-color: #000000;
   color: #ffffff;
   border: 5px solid rgb(90, 218, 178);
@@ -98,153 +57,255 @@
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  width: 6rem;
+  height: 2.5rem;
 }
 
-#stat-select-menu {
-  left: 70px;
+/* Outermost container - for all dashboards */
+#outer-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 54rem;
 }
 
-#stat-dropdown-label {
-  left: 20px;
+/* Lifetime stat container */
+#lifetime-container {
+  margin-top: 50px;
+}
+
+#lifetime-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  align-items: start;
 }
 
 #doughnut-chart {
-  margin-left: 15px;
-  margin-top: 5px;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+  padding: 10px;
+}
+
+.label-menu-container {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 10px;
+  align-items: baseline;
 }
 
 .metrics-container {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   display: flex;
-  flex-direction: row;
-  gap: 50px;
-  margin-left: 12px;
+  justify-content: space-around;
+  align-content: flex-start;
+  gap: 15px;
 }
 
-.metric {
+/* Game by Game Box */
+#game-by-game-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.game-by-game-menus-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px;
 }
-
-.metric-label {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-bottom: 8px;
-  cursor: help;
-}
-
-.metric-box {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.metric-value {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin: 0;
+.game-by-game-menus-container > div {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
 }
 
 #game-evolution-chart {
-  align-items: center;
-  margin-top: 60px;
-}
-
-.dashboard-wrapper {
-  transform-origin: top center;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  max-width: 800px;
+  height: auto;
 }
 
-/* Medium Screens (Tablets) */
+/* Final dashboard(s) */
+#goals-milestones-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 40px;
+}
+
+#goals-box,
+#milestones-box {
+  height: 31.25rem;
+  width: 100%;
+}
+
+#goals-box ul,
+#milestones-box ul {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+#goals-box ul li,
+#milestones-box ul li {
+  width: 90%;
+  margin-bottom: 15px; /* Space between bullets */
+}
+
+/* RESPONSIVE SCHEMES */
 @media (max-width: 1024px) {
-  .dashboard-wrapper {
-    transform: scale(0.8);
-    margin-top: 20px;
-  }
-}
-
-/* Small Screens (Phones) */
-@media (max-width: 480px) {
-  .dashboard-container {
-    width: 40%;
-  }
-
-  .dashboard-title {
-    font-size: 1.2rem;
-    text-align: center;
+  #outer-flex-container {
+    width: 700px;
   }
 
   #lifetime-box {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-  }
-
-  .metrics-container {
-    flex-direction: column;
-    gap: 15px;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
-
-  /* .svg {
-    position: relative;
-    align-items: center;
-  } */
-
-  #doughnut-chart {
-    margin: 10px 0px;
-  }
-
-  .metric-box {
-    width: 80px;
-    height: 80px;
-  }
-
-  .dropdown-label {
-    position: relative;
-    top: 0;
-    right: 0;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: 0px;
-    width: 25%;
-  }
-
-  #goals-milestones-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .milestone-group {
-    width: 100%;
-    align-items: center;
-  }
-
-  .dashboard-title {
-    text-align: center;
-    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    align-items: start;
   }
 
   #goals-box,
   #milestones-box {
+    height: 35rem;
+    width: 97%;
+  }
+}
+
+@media (max-width: 730px) {
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  #lifetime-container {
+    transform: scale(0.95);
+  }
+
+  #game-by-game-container {
+    transform: scale(0.95);
+  }
+
+  #goals-milestones-container {
+    transform: scale(0.95);
+  }
+
+  #goals-box,
+  #milestones-box {
+    height: 35rem;
+    width: 97%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .dashboard-asterisk {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .metric-label {
+    font-size: 1rem;
+  }
+
+  .metric-value {
+    font-size: 1rem;
+  }
+
+  .metric-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .dropdown-label {
+    font-size: 0.9rem;
+  }
+
+  .dropdown-menu {
+    font-size: 0.8rem;
+    width: 4.5rem;
+    height: 2.5rem;
+  }
+
+  /* Outermost container - for all dashboards */
+  #outer-flex-container {
+    width: 350px;
+  }
+
+  /* Lifetime stat container */
+  #lifetime-container {
+    margin-top: 30px;
+  }
+
+  #lifetime-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  .label-menu-container {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #doughnut-chart {
+    order: 2;
+  }
+
+  .metrics-container {
+    order: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Game by Game Box */
+  #game-by-game-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-by-game-menus-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .game-by-game-menus-container > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 20px;
+  }
+
+  /* Final dashboard(s) */
+  #goals-box,
+  #milestones-box {
+    height: 40rem;
     width: 100%;
-    padding: 10px;
+  }
+
+  #goals-box ul,
+  #milestones-box ul {
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  #goals-box ul li,
+  #milestones-box ul li {
+    width: 90%;
+    margin-bottom: 15px;
   }
 }
