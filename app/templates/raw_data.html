@@ -29,15 +29,23 @@
             <thead>
               <tr>
                 {% for col in seasonal_data[0].keys() %}
-                <th>{{ col }}</th>
+                <th
+                  class="{% if col in ['Season', 'Notes'] %}hide-on-small{% endif %}"
+                >
+                  {{ col }}
+                </th>
                 {% endfor %}
               </tr>
             </thead>
             <tbody>
               {% for row in seasonal_data %}
               <tr>
-                {% for cell in row.values() %}
-                <td>{{ cell }}</td>
+                {% for col, cell in row.items() %}
+                <td
+                  class="{% if col in ['Season', 'Notes'] %}hide-on-small{% endif %}"
+                >
+                  {{ cell }}
+                </td>
                 {% endfor %}
               </tr>
               {% endfor %}
@@ -52,15 +60,23 @@
             <thead>
               <tr>
                 {% for col in game_stats_data[0].keys() %}
-                <th>{{ col }}</th>
+                <th
+                  class="{% if col in ['Season', 'Goal Body Part', 'Notes'] %}hide-on-small{% endif %}"
+                >
+                  {{ col }}
+                </th>
                 {% endfor %}
               </tr>
             </thead>
             <tbody>
               {% for row in game_stats_data %}
               <tr>
-                {% for cell in row.values() %}
-                <td>{{ cell }}</td>
+                {% for col, cell in row.items() %}
+                <td
+                  class="{% if col in ['Season', 'Goal Body Part', 'Notes'] %}hide-on-small{% endif %}"
+                >
+                  {{ cell }}
+                </td>
                 {% endfor %}
               </tr>
               {% endfor %}
