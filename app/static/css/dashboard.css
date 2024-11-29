@@ -202,21 +202,18 @@
 
 @media (max-width: 480px) {
   .dashboard-title {
-    font-size: 0.95rem;
     text-align: center;
+    margin-bottom: 5px;
   }
 
   .dashboard-asterisk {
-    font-size: 0.8rem;
     text-align: center;
   }
 
   .metric-label {
-    font-size: 1rem;
   }
 
   .metric-value {
-    font-size: 1rem;
   }
 
   .metric-box {
@@ -225,11 +222,9 @@
   }
 
   .dropdown-label {
-    font-size: 0.9rem;
   }
 
   .dropdown-menu {
-    font-size: 0.8rem;
     width: 4.5rem;
     height: 2.5rem;
   }
@@ -291,6 +286,10 @@
   }
 
   /* Final dashboard(s) */
+  #goals-milestones-container h2 {
+    font-size: 1.2rem;
+  }
+
   #goals-box,
   #milestones-box {
     height: 40rem;
