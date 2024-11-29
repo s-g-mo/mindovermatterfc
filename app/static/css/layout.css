@@ -4,7 +4,20 @@ footer {
   width: 100%;
 }
 
-header {
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header-text {
   height: 9rem;
   display: flex;
   flex-direction: column;
@@ -12,17 +25,17 @@ header {
   text-align: center;
 }
 
-header h1 {
+.header-text h1 {
   margin: 0;
   font-size: 2.5rem;
   color: #fff;
 }
 
-header nav {
+.header-text nav {
   margin-top: 0.9rem;
 }
 
-header nav a {
+.header-text nav a {
   display: inline-block;
   color: #ffffff;
   text-decoration: none;
@@ -31,7 +44,7 @@ header nav a {
   font-size: 1rem;
 }
 
-header nav a:hover {
+.header-text nav a:hover {
   color: #4b9cd3;
 }
 
@@ -82,17 +95,21 @@ footer p {
 
 /* Medium Screens (Tablets) */
 @media (max-width: 1024px) {
-  header {
+  .header-text {
     height: 7rem;
   }
 
-  header h1 {
+  .header-text h1 {
     font-size: 2rem;
   }
 
-  header nav a {
+  .header-text nav a {
     font-size: 0.9rem;
     margin: 0 0.4rem;
+  }
+
+  .logo img {
+    width: 100px;
   }
 
   #contact-button {
@@ -121,17 +138,21 @@ footer p {
 
 /* Small Screens (Phones) */
 @media (max-width: 480px) {
-  header {
+  .header-text {
     height: 5rem;
   }
 
-  header h1 {
+  .header-text h1 {
     font-size: 1.5rem;
   }
 
-  header nav a {
+  .header-text nav a {
     font-size: 0.7rem;
     margin: 0 0.2rem;
+  }
+
+  .logo img {
+    width: 80px;
   }
 
   #contact-button {
