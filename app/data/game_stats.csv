@@ -38,4 +38,5 @@ Date,Season_Code,Season_Name,Year,Organization,Game_Type,Outcome,Goals,Goal_Body
 2025-03-07, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,1,R, 0,
 2025-03-14, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 1,
 2025-03-19, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,0,0,, 2, Last game of the season.
-2025-03-21, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,0,0,, 1,
+2025-03-21, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 1,
+2025-03-28, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,0,, 0,
