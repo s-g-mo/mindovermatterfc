@@ -52,7 +52,15 @@
                 <td
                   class="{% if col in ['Season', 'Notes'] %}hide-on-small{% endif %}"
                 >
-                  {{ cell }}
+                  {% if col == 'Assists' %} {% if cell is not none %} {% set
+                  rounded = (cell | float) | round(0) %} {% if rounded ==
+                  rounded|int %} {{ rounded | int }}
+                  <!-- Display as integer without decimals -->
+                  {% else %} {{ rounded }}
+                  <!-- Display float with decimals if it's not a whole number -->
+                  {% endif %} {% else %} {{ cell }}
+                  <!-- Leave NaN as is -->
+                  {% endif %} {% else %} {{ cell }} {% endif %}
                 </td>
                 {% endfor %}
               </tr>
@@ -61,6 +69,7 @@
           </table>
         </div>
       </section>
+
       <section>
         <h2>Game Stats</h2>
         <div class="table-container">
