@@ -25,7 +25,9 @@ def process_game_stats(df_game_stats):
         df["Win_Percentage"] = (df["Cumulative_Wins"] / df["Cumulative_Games"]) * 100
 
     return {
-        key: df[["Date", "Game_Type", "Goals_Per_Game", "Win_Percentage"]].to_dict(orient="records")
+        key: df[["Date", "Game_Type", "Goals_Per_Game", "Win_Percentage"]].to_dict(
+            orient="records"
+        )
         for key, df in dataframes.items()
     }
 
@@ -54,21 +56,29 @@ def process_seasonal_stats(df_seasonal):
     game_data["goals_per_game"] = game_data["goals"] / game_data["games_played"]
     game_data["assists_per_game"] = game_data["assists"] / game_data["games_played"]
 
-    n_games_with_assists_tracked = df_seasonal[df_seasonal.Assists.notna()].Games_Played.sum()
+    n_games_with_assists_tracked = df_seasonal[
+        df_seasonal.Assists.notna()
+    ].Games_Played.sum()
 
     all_row = pd.DataFrame(
         {
             "Game_Type": ["All"],
             "games_played": [game_data["games_played"].sum()],
             "goals": [game_data["goals"].sum()],
-            "goals_per_game": [game_data["goals"].sum() / game_data["games_played"].sum()],
+            "goals_per_game": [
+                game_data["goals"].sum() / game_data["games_played"].sum()
+            ],
             "assists": [game_data["assists"].sum()],
-            "assists_per_game": [game_data["assists"].sum() / n_games_with_assists_tracked],
+            "assists_per_game": [
+                game_data["assists"].sum() / n_games_with_assists_tracked
+            ],
         }
     )
 
     game_data = pd.concat([game_data, all_row], ignore_index=True)
-    return game_data.rename(columns={"Game_Type": "game_type"}).to_dict(orient="records")
+    return game_data.rename(columns={"Game_Type": "game_type"}).to_dict(
+        orient="records"
+    )
 
 
 def rename_and_select(df, columns_mapping, display_cols):
