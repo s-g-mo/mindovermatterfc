@@ -140,7 +140,7 @@
 
 #goals-box,
 #milestones-box {
-  height: 31.25rem;
+  height: 40rem;
   width: 100%;
 }
 
@@ -171,7 +171,7 @@
 
   #goals-box,
   #milestones-box {
-    height: 35rem;
+    height: 40rem;
     width: 97%;
   }
 }
@@ -195,7 +195,7 @@
 
   #goals-box,
   #milestones-box {
-    height: 35rem;
+    height: 40rem;
     width: 97%;
   }
 }
