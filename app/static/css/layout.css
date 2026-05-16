@@ -48,6 +48,12 @@ footer {
   color: #4b9cd3;
 }
 
+.header-text nav a.active {
+  color: #3ecf8e;
+  border-bottom: 2px solid #3ecf8e;
+  padding-bottom: 1px;
+}
+
 #contact-button {
   background: none;
   border: none;

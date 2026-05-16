@@ -1,74 +1,74 @@
-Date,Season_Code,Season_Name,Year,Organization,Game_Type,Outcome,Goals,Goal_Body_Part,Assists,Notes
-2024-05-25, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0, First match of season.
-2024-06-01, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-06-08, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-06-15, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,0,, 0,
-2024-07-06, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-07-13, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-07-20, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,0,, 0,
-2024-08-10, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,1,L, 0,
-2024-08-17, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-08-24, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,1,L, 0,
-2024-08-31, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,1,R, 0,
-2024-09-07, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-09-14, 2, Summer, 2024, "Ottawa South United - Mens",11v11,0,0,, 0,
-2024-09-21, 2, Summer, 2024, "Ottawa South United - Mens",11v11,0,1,L, 0,
-2024-09-28, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,1,R, 0,
-2024-10-09, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,0,1,R, 1, Exhibition match.
-2024-10-12, 2, Summer, 2024, "Ottawa South United - Mens",11v11,1,0,, 0,
-2024-10-16, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,1,R, 0, First match of season.
-2024-10-19, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2024-10-26, 2, Summer, 2024, "Ottawa South United - Mens",11v11,-1,1,H, 0, First 11v11 header.
-2024-10-30, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,1,R, 0, Scored a banger free kick.
-2024-11-06, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0, Getting frustrated at losses.
-2024-11-13, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0, Defensive improvements 5-3 loss.
-2024-11-20, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,1,L, 0,
-2024-11-27, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,0,, 1,
-2024-12-04, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,1,R, 0,
-2024-12-18, 4, Winter, 2024, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0,
-2025-01-29, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0,
-2025-02-05, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0,
-2025-02-07, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,1,R, 1, First coed match of the season
-2025-02-12, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,1,1,L, 2, First futsal win.
-2025-02-14, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 0, Team placed in Div2 but shouldn't be
-2025-02-19, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0, Played Keeper 1/2 match - close game (3-4)
-2025-02-26, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,-1,0,, 0, Played Keeper full match
-2025-02-28, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 0,
-2025-03-05, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,-1,1,R, 1, Close match (7-8 I think). Really fun. 
-2025-03-07, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,1,R, 0,
-2025-03-14, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 1,
-2025-03-19, 4, Winter, 2025, "Ottawa Futsal Club - Mens",5v5,0,0,, 2, Last game of the season.
-2025-03-21, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,-1,0,, 1,
-2025-03-28, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,0,, 0,
-2025-04-04, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,0,0,, 0,
-2025-04-11, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,1,L, 0,
-2025-04-25, 4, Winter, 2025, "Ottawa Footy Sevens - Coed",7v7,1,0,,1, Last game of this batch. Assisted header goal from corner kick
-2025-04-30, 1, Spring, 2025, "OCSL Preseason",11v11,1,0,, 0, 75 min pre-season match. Trying out for OCSL MR4 team. Was placed CDM
-2025-05-16, 1, Spring, 2025, "OCSL Preseason",11v11,1,0,, 0, 75 min pre-season match. Trying out with an OCSL OT1 game. Played winger L/R
-2025-05-19, 1, Spring, 2025, "OCSL Preseason",11v11,0,0,, 0, 90 min pre-season match. MC2 exhibition match. Tie.
-2025-05-24, 2, Summer, 2025, "Ottawa South United - Mens",11v11,0,0,, 0, First OSU match of 2025. New team - new group.
-2025-05-31, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,2,R/L, 0, Scored a penalty with right foot + Open play goal with left
-2025-06-02, 2, Summer, 2025, "OCSL - MC2",11v11,-1,1,R, 0, Scored in first "competitive" match ever played ;)
-2025-06-09, 2, Summer, 2025, "OCSL - MC2",11v11,-1,0,, 0,
-2025-06-14, 2, Summer, 2025, "Ottawa South United - Mens",11v11,0,0,, 0,
-2025-06-16, 2, Summer, 2025, "OCSL - MC2",11v11,1,0,, 0,
-2025-06-21, 2, Summer, 2025, "Ottawa South United - Mens",11v11,0,0,, 0,
-2025-06-30, 2, Summer, 2025, "OCSL - MC2",11v11,0,0,, 0, Only played 13 minutes >:(
-2025-07-05, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,1,R, 1, Played full 90.
-2025-07-07, 2, Summer, 2025, "OCSL - MC2",11v11,-1,0,, 0, Played full 90 minutes. Team had no subs :'(
-2025-07-12, 2, Summer, 2025, "Ottawa South United - Mens",11v11,1,1,R, 1, Played full 90 - one goal - one assist - a perfect cross with my R. First win with this team!!
-2025-07-19, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,2,L/R, 0, Played 90 minutes again. Almost got a hat-trick!
-2025-07-21, 2, Summer, 2025, "OCSL - MC2",11v11,-1,0,, 0, Played about 10 minutes >:(
-2025-07-26, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2025-08-09, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,1,R, 0,
-2025-08-16, 2, Summer, 2025, "Ottawa South United - Mens",11v11,1,0,, 0, No goals but happy with my play. 3 shots on target. 
-2025-08-23, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,0,, 0, Had a goal unfairly ruled as offside. Should be my 8th.
-2025-08-30, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,0,, 0, 2 or 3 shots on target. Created a great team goal.
-2025-09-06, 2, Summer, 2025, "Ottawa South United - Mens",11v11,1,0,, 1, Assisted the only goal of the game.
-2025-09-13, 2, Summer, 2025, "Ottawa South United - Mens",11v11,0,2,R/H, 1, My 3rd ever brace 2 goals + 1 assist.
-2025-09-20, 2, Summer, 2025, "Special",11v11,0,0,, 1, Joined a team for one day 35+ tourny. 4x40 minute games. Played about 90 mins total.
-2025-09-27, 2, Summer, 2025, "Ottawa South United - Mens",11v11,-1,0,, 0,
-2025-10-04, 2, Summer, 2025, "Ottawa South United - Mens",11v11,1,0,, 0, Didn't score or assist but played well. Had like 4 shots on target.
-2025-10-11, 2, Summer, 2025, "Ottawa South United - Mens",11v11,0,1,R, 0, Final game of the season. Scored but didn't get the last assist ;).
-2026-04-30, 1, Spring, 2026, "OCSL Preseason",11v11,1,0,, 0, 60 min pre-season match with Ottawa Hellenic OT1 vs an MR2 team
-2026-05-12, 1, Spring, 2026, "Ottawa Footy Sevens",7v7,1,0,, 0, Random 7s game. Joined a team as a sub for a match. Used for 2026 pre-season.
+Date,Season_Code,Season_Name,Year,Organization,Game_Type,Outcome,Goals,Goal_Body_Part,Assists,Notes,Youtube_URL
+2024-05-25,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0, First match of season.,
+2024-06-01,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-06-08,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-06-15,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,0,,0,,
+2024-07-06,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-07-13,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-07-20,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,0,,0,,
+2024-08-10,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,1,L,0,,
+2024-08-17,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-08-24,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,1,L,0,,
+2024-08-31,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,1,R,0,,
+2024-09-07,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-09-14,2, Summer,2024," ""Ottawa South United - Mens""",11v11,0,0,,0,,
+2024-09-21,2, Summer,2024," ""Ottawa South United - Mens""",11v11,0,1,L,0,,
+2024-09-28,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,1,R,0,,
+2024-10-09,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,0,1,R,1, Exhibition match.,
+2024-10-12,2, Summer,2024," ""Ottawa South United - Mens""",11v11,1,0,,0,,
+2024-10-16,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,1,R,0, First match of season.,
+2024-10-19,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2024-10-26,2, Summer,2024," ""Ottawa South United - Mens""",11v11,-1,1,H,0, First 11v11 header.,
+2024-10-30,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,1,R,0, Scored a banger free kick.,
+2024-11-06,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0, Getting frustrated at losses.,
+2024-11-13,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0, Defensive improvements 5-3 loss.,
+2024-11-20,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,1,L,0,,
+2024-11-27,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,1,,
+2024-12-04,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,1,R,0,,
+2024-12-18,4, Winter,2024," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0,,
+2025-01-29,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0,, https://youtu.be/Inp38DH5ZbM
+2025-02-05,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0,, https://youtu.be/VqYnqHcVo5Q
+2025-02-07,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,1,1,R,1, First coed match of the season,
+2025-02-12,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,1,1,L,2, First futsal win., https://youtu.be/tfcy1TbzHzQ
+2025-02-14,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,-1,0,,0, Team placed in Div2 but shouldn't be,
+2025-02-19,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0, Played Keeper 1/2 match - close game (3-4),
+2025-02-26,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,-1,0,,0, Played Keeper full match, https://youtu.be/nhCCW6oEXEQ
+2025-02-28,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,-1,0,,0,, https://youtu.be/lq9PEUSuacM
+2025-03-05,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,-1,1,R,1, Close match (7-8 I think). Really fun. ,
+2025-03-07,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,1,1,R,0,,
+2025-03-14,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,-1,0,,1,, https://youtu.be/7M6oPAY4PpA
+2025-03-19,4, Winter,2025," ""Ottawa Futsal Club - Mens""",5v5,0,0,,2, Last game of the season.,
+2025-03-21,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,-1,0,,1,, https://youtu.be/XmTH76Z9fk0
+2025-03-28,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,1,0,,0,, https://youtu.be/OCMZuGsiYbQ
+2025-04-04,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,0,0,,0,, https://youtu.be/qmPeuIlSFiY
+2025-04-11,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,1,1,L,0,,
+2025-04-25,4, Winter,2025," ""Ottawa Footy Sevens - Coed""",7v7,1,0,,1, Last game of this batch. Assisted header goal from corner kick,
+2025-04-30,1, Spring,2025," ""OCSL Preseason""",11v11,1,0,,0, 75 min pre-season match. Trying out for OCSL MR4 team. Was placed CDM,
+2025-05-16,1, Spring,2025," ""OCSL Preseason""",11v11,1,0,,0, 75 min pre-season match. Trying out with an OCSL OT1 game. Played winger L/R,
+2025-05-19,1, Spring,2025," ""OCSL Preseason""",11v11,0,0,,0, 90 min pre-season match. MC2 exhibition match. Tie., https://youtu.be/EzH9AtvWK0Q
+2025-05-24,2, Summer,2025," ""Ottawa South United - Mens""",11v11,0,0,,0, First OSU match of 2025. New team - new group., https://youtu.be/yjY77Sxe8Kk
+2025-05-31,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,2,R/L,0, Scored a penalty with right foot + Open play goal with left, https://youtu.be/NlOR5_PpgKw
+2025-06-02,2, Summer,2025," ""OCSL - MC2""",11v11,-1,1,R,0," Scored in first ""competitive"" match ever played ;)", https://youtu.be/r9UUq2S8ekE
+2025-06-09,2, Summer,2025," ""OCSL - MC2""",11v11,-1,0,,0,, https://youtu.be/q0EbexrA7ho
+2025-06-14,2, Summer,2025," ""Ottawa South United - Mens""",11v11,0,0,,0,, https://youtu.be/s-mTrPO4ywo
+2025-06-16,2, Summer,2025," ""OCSL - MC2""",11v11,1,0,,0,, https://youtu.be/cL1F3gJXCW4
+2025-06-21,2, Summer,2025," ""Ottawa South United - Mens""",11v11,0,0,,0,, https://youtu.be/i7aVOPcUs-E
+2025-06-30,2, Summer,2025," ""OCSL - MC2""",11v11,0,0,,0, Only played 13 minutes >:(, https://youtu.be/-uAfZVdy80o
+2025-07-05,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,1,R,1, Played full 90.,
+2025-07-07,2, Summer,2025," ""OCSL - MC2""",11v11,-1,0,,0, Played full 90 minutes. Team had no subs :'(,
+2025-07-12,2, Summer,2025," ""Ottawa South United - Mens""",11v11,1,1,R,1, Played full 90 - one goal - one assist - a perfect cross with my R. First win with this team!!,
+2025-07-19,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,2,L/R,0, Played 90 minutes again. Almost got a hat-trick!, https://youtu.be/YnL60PZlyI0
+2025-07-21,2, Summer,2025," ""OCSL - MC2""",11v11,-1,0,,0, Played about 10 minutes >:(, https://youtu.be/Ro36gE-1DwY
+2025-07-26,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,0,,0,,
+2025-08-09,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,1,R,0,,
+2025-08-16,2, Summer,2025," ""Ottawa South United - Mens""",11v11,1,0,,0, No goals but happy with my play. 3 shots on target. ,
+2025-08-23,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,0,,0, Had a goal unfairly ruled as offside. Should be my 8th.,
+2025-08-30,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,0,,0, 2 or 3 shots on target. Created a great team goal.,
+2025-09-06,2, Summer,2025," ""Ottawa South United - Mens""",11v11,1,0,,1, Assisted the only goal of the game.,
+2025-09-13,2, Summer,2025," ""Ottawa South United - Mens""",11v11,0,2,R/H,1, My 3rd ever brace 2 goals + 1 assist.,
+2025-09-20,2, Summer,2025," ""Special""",11v11,0,0,,1, Joined a team for one day 35+ tourny. 4x40 minute games. Played about 90 mins total.,
+2025-09-27,2, Summer,2025," ""Ottawa South United - Mens""",11v11,-1,0,,0,, https://youtu.be/CrNZK3j5-Hw
+2025-10-04,2, Summer,2025," ""Ottawa South United - Mens""",11v11,1,0,,0, Didn't score or assist but played well. Had like 4 shots on target., https://youtu.be/DYqpe6FrPQU
+2025-10-11,2, Summer,2025," ""Ottawa South United - Mens""",11v11,0,1,R,0, Final game of the season. Scored but didn't get the last assist ;)., https://youtu.be/SKCdjhrfQaI
+2026-04-30,1, Spring,2026," ""OCSL Preseason""",11v11,1,0,,0, 60 min pre-season match with Ottawa Hellenic OT1 vs an MR2 team,
+2026-05-12,1, Spring,2026," ""Ottawa Footy Sevens""",7v7,1,0,,0, Random 7s game. Joined a team as a sub for a match. Used for 2026 pre-season., https://youtu.be/LomTRtt0EQc
