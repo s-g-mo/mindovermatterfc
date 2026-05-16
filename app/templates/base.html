@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Mind Over Matter FC{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="/static/css/layout.css" />
+    {% block extra_css %}{% endblock %}
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="/static/logo_120pxh.png" alt="Mind Over Matter FC Logo" />
+        </div>
+        <div class="header-text">
+          <h1>Mind Over Matter FC</h1>
+          <nav>
+            <a href="/" class="{% if page == 'home' %}active{% endif %}">Home</a>
+            |
+            <a href="/about" class="{% if page == 'about' %}active{% endif %}">About</a>
+            |
+            <a href="/raw-data" class="{% if page == 'raw-data' %}active{% endif %}">Raw Data</a>
+            |
+            <button id="contact-button">Contact</button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>
+      <p>© {{ current_year }} Stephen Mosher</p>
+      <div class="social-icons">
+        <a
+          href="https://www.youtube.com/@MindOverMatterFC"
+          target="_blank"
+          aria-label="YouTube"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/stephen-mosher-514a951b3/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://www.github.com/s-g-mo"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("contact-button")
+        .addEventListener("click", function () {
+          const email = "steve@mindovermatterfc.com";
+          navigator.clipboard
+            .writeText(email)
+            .then(() => {
+              alert("Email address copied to clipboard: " + email);
+            })
+            .catch((err) => {
+              alert("Failed to copy email address: " + err);
+            });
+        });
+    </script>
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

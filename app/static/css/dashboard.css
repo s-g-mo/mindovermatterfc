@@ -65,13 +65,11 @@
 #outer-flex-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   width: 54rem;
-}
-
-/* Lifetime stat container */
-#lifetime-container {
-  margin-top: 50px;
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+  padding-top: 50px;
 }
 
 #lifetime-box {
@@ -156,17 +154,159 @@
   margin-bottom: 15px; /* Space between bullets */
 }
 
+/* Recent Form section */
+#recent-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+#form-squares-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-square {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border-bottom: 6px solid transparent;
+  box-sizing: border-box;
+}
+
+.form-square.win   { border-bottom-color: #ffffff; }
+.form-square.draw  { border-bottom-color: #f59e0b; }
+.form-square.loss  { border-bottom-color: #ef4444; }
+.form-square.unknown { border-bottom-color: #6b7280; }
+
+.form-square.type-11v11 { background-color: #3ecf8e; }
+.form-square.type-7v7   { background-color: #a78bfa; }
+.form-square.type-5v5   { background-color: #4b9cd3; }
+.form-square.type-other { background-color: #6b7280; }
+
+#recent-form-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-direction-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+  padding: 0 4px;
+}
+
+.form-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.legend-swatch.type-11v11 { background-color: #3ecf8e; }
+.legend-swatch.type-7v7   { background-color: #a78bfa; }
+.legend-swatch.type-5v5   { background-color: #4b9cd3; }
+
+.legend-outcome {
+  display: inline-block;
+  width: 22px;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.legend-outcome.win  { background-color: #ffffff; }
+.legend-outcome.draw { background-color: #f59e0b; }
+.legend-outcome.loss { background-color: #ef4444; }
+
+.legend-divider {
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Year-to-Year section */
+#yearly-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.yearly-menus-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.yearly-menus-container > div {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+}
+
+#yearly-stats-chart {
+  width: 100%;
+  height: auto;
+}
+
 /* RESPONSIVE SCHEMES */
 @media (max-width: 1024px) {
   #outer-flex-container {
     width: 700px;
   }
 
+  /* Stack lifetime box vertically at all sub-full-width sizes */
   #lifetime-box {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr;
-    grid-template-rows: 1fr 2fr;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .label-menu-container {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #doughnut-chart {
+    order: 2;
+  }
+
+  .metrics-container {
+    order: 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   #goals-box,
@@ -181,22 +321,15 @@
     font-size: 1.5rem;
   }
 
-  #lifetime-container {
-    transform: scale(0.95);
-  }
-
-  #game-by-game-container {
-    transform: scale(0.95);
-  }
-
+  /* Stack goals and milestones into a single column on narrow screens */
   #goals-milestones-container {
-    transform: scale(0.95);
+    grid-template-columns: 1fr;
   }
 
   #goals-box,
   #milestones-box {
-    height: 50rem;
-    width: 97%;
+    height: auto;
+    width: 100%;
   }
 }
 
@@ -221,6 +354,14 @@
     height: 70px;
   }
 
+  /* Force metrics to wrap into rows of ~3 on small screens */
+  .metrics-container .metric {
+    flex: 0 0 calc(33% - 10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .dropdown-label {
   }
 
@@ -229,43 +370,7 @@
     height: 2.5rem;
   }
 
-  /* Outermost container - for all dashboards */
-  #outer-flex-container {
-    width: 350px;
-  }
-
-  /* Lifetime stat container */
-  #lifetime-container {
-    margin-top: 30px;
-  }
-
-  #lifetime-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-  }
-
-  .label-menu-container {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #doughnut-chart {
-    order: 2;
-  }
-
-  .metrics-container {
-    order: 3;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
+  /* Width handled by max-width: calc(100vw - 2rem) on the base rule */
 
   /* Game by Game Box */
   #game-by-game-box {
