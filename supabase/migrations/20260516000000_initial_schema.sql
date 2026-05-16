@@ -45,8 +45,20 @@ create table if not exists public.seasonal_stats (
 alter table public.game_stats    enable row level security;
 alter table public.seasonal_stats enable row level security;
 
-create policy "Public read access"
-  on public.game_stats for select using (true);
+do $$ begin
+  if not exists (
+    select 1 from pg_policies
+    where schemaname = 'public' and tablename = 'game_stats' and policyname = 'Public read access'
+  ) then
+    execute 'create policy "Public read access" on public.game_stats for select using (true)';
+  end if;
+end $$;
 
-create policy "Public read access"
-  on public.seasonal_stats for select using (true);
+do $$ begin
+  if not exists (
+    select 1 from pg_policies
+    where schemaname = 'public' and tablename = 'seasonal_stats' and policyname = 'Public read access'
+  ) then
+    execute 'create policy "Public read access" on public.seasonal_stats for select using (true)';
+  end if;
+end $$;
