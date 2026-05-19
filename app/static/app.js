@@ -1,9 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Lifetime stats (doughnut chart + metric boxes)
 // ─────────────────────────────────────────────────────────────────────────────
-async function fetchData() {
-  const response = await fetch("/api/data");
-  const data = await response.json();
+function fetchData() {
+  const data = window.__DASHBOARD__.seasonal;
   window.dashboardData = data;
 
   document.querySelector("#first-dropdown-menu").value = "All";
@@ -113,9 +112,8 @@ function renderPieChart(data, selectedGameType = "All") {
 // ─────────────────────────────────────────────────────────────────────────────
 // Game-by-game evolution (line chart)
 // ─────────────────────────────────────────────────────────────────────────────
-async function fetchGameStats() {
-  const response = await fetch("/api/game-stats");
-  const data = await response.json();
+function fetchGameStats() {
+  const data = window.__DASHBOARD__.gameStats;
   window.dashboardStats = data;
 
   renderStatGraph("All", "Goals_Per_Game");
@@ -245,9 +243,8 @@ function renderLineGraph(data, yLabel, xLabel, statKey, width = 800, height = 40
 // ─────────────────────────────────────────────────────────────────────────────
 // Year-to-year progress (bar chart)
 // ─────────────────────────────────────────────────────────────────────────────
-async function fetchYearlyStats() {
-  const response = await fetch("/api/yearly-stats");
-  const data = await response.json();
+function fetchYearlyStats() {
+  const data = window.__DASHBOARD__.yearlyStats;
   window.yearlyStats = data;
 
   renderYearlyChart("All", "goals_per_game");
@@ -421,10 +418,8 @@ window.addEventListener(
 // ─────────────────────────────────────────────────────────────────────────────
 // Recent Form (last 10 matches)
 // ─────────────────────────────────────────────────────────────────────────────
-async function fetchRecentForm() {
-  const response = await fetch("/api/recent-form");
-  const data = await response.json();
-  renderRecentForm(data);
+function fetchRecentForm() {
+  renderRecentForm(window.__DASHBOARD__.recentForm);
 }
 
 function renderRecentForm(data) {

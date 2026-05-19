@@ -289,6 +289,54 @@ def format_seasonal_stats_for_frontend_display(df):
     return df.fillna("")
 
 
+def _extract_youtube_id(url: str) -> str:
+    """Extract video ID from youtu.be or youtube.com/watch?v= URLs."""
+    url = url.strip()
+    if "youtu.be/" in url:
+        return url.split("youtu.be/")[-1].split("?")[0].strip()
+    if "v=" in url:
+        return url.split("v=")[-1].split("&")[0].strip()
+    return ""
+
+
+def load_media_videos():
+    """Return matches that have a YouTube URL, most recent first."""
+    df = load_game_stats()
+    if "Youtube_URL" not in df.columns:
+        df["Youtube_URL"] = ""
+    df = df[df["Youtube_URL"].astype(str).str.strip().ne("") & df["Youtube_URL"].notna()].copy()
+    df = df.sort_values("Date", ascending=False)
+
+    outcome_map = {1: "W", 0: "D", -1: "L"}
+    videos = []
+    for _, row in df.iterrows():
+        url = str(row["Youtube_URL"]).strip()
+        video_id = _extract_youtube_id(url)
+        if not video_id:
+            continue
+        outcome_val = row.get("Outcome")
+        try:
+            outcome_val = int(outcome_val)
+        except (TypeError, ValueError):
+            outcome_val = None
+        videos.append(
+            {
+                "date": str(row["Date"]),
+                "year": str(row.get("Year", ""))[:4],
+                "season_name": str(row.get("Season_Name", "")).strip(),
+                "game_type": str(row.get("Game_Type", "")).strip(),
+                "organization": str(row.get("Organization", "")).strip().strip('"'),
+                "outcome": outcome_map.get(outcome_val, "?"),
+                "goals": int(row["Goals"]) if pd.notna(row.get("Goals")) else 0,
+                "assists": int(row["Assists"]) if pd.notna(row.get("Assists")) else 0,
+                "notes": str(row.get("Notes", "")).strip(),
+                "youtube_url": url,
+                "video_id": video_id,
+            }
+        )
+    return videos
+
+
 def load_game_stats_table():
     df_game_stats = load_game_stats()
     df_game_stats = format_game_stats_for_frontend_display(df_game_stats)

@@ -2,6 +2,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="/static/css/dashboard.css" />
+<link rel="stylesheet" href="/static/css/media.css" />
 {% endblock %}
 
 {% block content %}
@@ -27,6 +28,49 @@
     </div>
     <p class="dashboard-asterisk" id="recent-form-date-range"></p>
   </section>
+
+  {% if recent_videos %}
+  <section class="dashboard-container" id="highlights-container">
+    <div class="highlights-header">
+      <h2 class="dashboard-title">Recent Highlights</h2>
+      <a href="/media" class="highlights-view-all">View all →</a>
+    </div>
+    <div id="highlights-grid">
+      {% for v in recent_videos %}
+      <a
+        href="{{ v.youtube_url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="video-card"
+        aria-label="Watch {{ v.date }} match on YouTube"
+      >
+        <div class="thumbnail-wrap">
+          <img
+            src="https://img.youtube.com/vi/{{ v.video_id }}/hqdefault.jpg"
+            alt="Match thumbnail {{ v.date }}"
+            loading="lazy"
+            class="thumbnail"
+          />
+          <div class="play-overlay"><i class="fab fa-youtube"></i></div>
+        </div>
+        <div class="card-meta">
+          <div class="card-top-row">
+            <span class="card-date">{{ v.date }}</span>
+            <span class="outcome-badge outcome-{{ v.outcome }}">{{ v.outcome }}</span>
+          </div>
+          <div class="card-detail">
+            <span class="game-type-pill type-{{ v.game_type }}">{{ v.game_type }}</span>
+            <span class="card-stats">{{ v.goals }}G &nbsp;{{ v.assists }}A</span>
+          </div>
+          {% if v.notes %}
+          <p class="card-notes">{{ v.notes }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   <section class="dashboard-container" id="lifetime-container">
     <h2 class="dashboard-title" id="lifetime-title">
@@ -135,7 +179,7 @@
       </div>
       <div id="yearly-stats-chart"></div>
     </div>
-    <p class="dashboard-asterisk">All game types combined (excl. early mixed-format seasons)</p>
+
   </section>
 
   <section class="dashboard-container" id="goals-milestones-container">
@@ -184,6 +228,7 @@
 {% endblock %}
 
 {% block extra_scripts %}
+<script>window.__DASHBOARD__ = {{ inline_data | safe }};</script>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="/static/app.js"></script>
 {% endblock %}

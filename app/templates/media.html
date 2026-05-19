@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Media | Mind Over Matter FC{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/media.css" />
+{% endblock %}
+
+{% block content %}
+<div id="media-outer">
+
+  <div id="media-header">
+    <h2 class="dashboard-title">Match Highlights</h2>
+    <div id="media-filters">
+      <div class="filter-group">
+        <label class="dropdown-label" for="filter-game-type">Game Type</label>
+        <select id="filter-game-type" class="dropdown-menu">
+          <option value="All">All</option>
+          {% for gt in game_types %}
+          <option value="{{ gt }}">{{ gt }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="dropdown-label" for="filter-year">Year</label>
+        <select id="filter-year" class="dropdown-menu">
+          <option value="All">All</option>
+          {% for yr in years %}
+          <option value="{{ yr }}">{{ yr }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <p id="media-count" class="media-count-label"></p>
+
+  <div id="video-grid">
+    {% for v in videos %}
+    <a
+      href="{{ v.youtube_url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="video-card"
+      data-game-type="{{ v.game_type }}"
+      data-year="{{ v.year }}"
+      aria-label="Watch {{ v.date }} match on YouTube"
+    >
+      <div class="thumbnail-wrap">
+        <img
+          src="https://img.youtube.com/vi/{{ v.video_id }}/hqdefault.jpg"
+          alt="Match thumbnail {{ v.date }}"
+          loading="lazy"
+          class="thumbnail"
+        />
+        <div class="play-overlay">
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="card-meta">
+        <div class="card-top-row">
+          <span class="card-date">{{ v.date }}</span>
+          <span class="outcome-badge outcome-{{ v.outcome }}">{{ v.outcome }}</span>
+        </div>
+        <div class="card-detail">
+          <span class="game-type-pill type-{{ v.game_type | replace('v', 'v') }}">{{ v.game_type }}</span>
+          <span class="card-stats">{{ v.goals }}G &nbsp;{{ v.assists }}A</span>
+        </div>
+        {% if v.notes %}
+        <p class="card-notes">{{ v.notes }}</p>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <p id="no-results" class="no-results-msg" style="display:none;">No videos match the selected filters.</p>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  const cards = Array.from(document.querySelectorAll('.video-card'));
+  const countEl = document.getElementById('media-count');
+  const noResults = document.getElementById('no-results');
+
+  function updateCount(visible) {
+    countEl.textContent = visible + ' video' + (visible !== 1 ? 's' : '');
+  }
+
+  function applyFilters() {
+    const gt = document.getElementById('filter-game-type').value;
+    const yr = document.getElementById('filter-year').value;
+    let visible = 0;
+    cards.forEach(card => {
+      const match =
+        (gt === 'All' || card.dataset.gameType === gt) &&
+        (yr === 'All' || card.dataset.year === yr);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    updateCount(visible);
+    noResults.style.display = visible === 0 ? '' : 'none';
+  }
+
+  document.getElementById('filter-game-type').addEventListener('change', applyFilters);
+  document.getElementById('filter-year').addEventListener('change', applyFilters);
+
+  updateCount(cards.length);
+</script>
+{% endblock %}

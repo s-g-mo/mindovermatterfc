@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -9,6 +10,7 @@ from fastapi.templating import Jinja2Templates
 from app.data_utils import (
     load_game_stats,
     load_game_stats_table,
+    load_media_videos,
     load_seasonal_stats,
     load_seasonal_stats_table,
     process_game_stats,
@@ -33,7 +35,26 @@ templates.env.globals["current_year"] = datetime.now().year
 
 @app.get("/")
 async def read_index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "page": "home"})
+    df_game = load_game_stats()
+    df_seasonal = load_seasonal_stats()
+    inline_data = json.dumps(
+        {
+            "seasonal": process_seasonal_stats(df_seasonal),
+            "gameStats": process_game_stats(df_game),
+            "yearlyStats": process_yearly_stats(df_seasonal),
+            "recentForm": process_recent_form(df_game),
+        }
+    )
+    recent_videos = load_media_videos()[:3]
+    return templates.TemplateResponse(
+        "index.html",
+        {
+            "request": request,
+            "page": "home",
+            "recent_videos": recent_videos,
+            "inline_data": inline_data,
+        },
+    )
 
 
 @app.get("/about")
@@ -52,6 +73,23 @@ async def read_raw_data(request: Request):
             "page": "raw-data",
             "game_stats_data": game_data,
             "seasonal_data": seasonal_data,
+        },
+    )
+
+
+@app.get("/media")
+async def read_media(request: Request):
+    videos = load_media_videos()
+    game_types = sorted({v["game_type"] for v in videos if v["game_type"]})
+    years = sorted({v["year"] for v in videos if v["year"]}, reverse=True)
+    return templates.TemplateResponse(
+        "media.html",
+        {
+            "request": request,
+            "page": "media",
+            "videos": videos,
+            "game_types": game_types,
+            "years": years,
         },
     )
 
