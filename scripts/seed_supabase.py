@@ -13,8 +13,8 @@ Requires a .env file at the repo root:
 
 How it works:
     - Clears the seasonal_stats table and re-inserts from CSV (safe to re-run)
-    - For game_stats, preserves any youtube_url values already saved in Supabase,
-      then re-inserts all rows from CSV (new rows get youtube_url=None by default)
+    - Clears the game_stats table and re-inserts from CSV. The CSV is the single
+      source of truth for all data including youtube_url.
 """
 
 import os
@@ -63,21 +63,9 @@ client.table("seasonal_stats").insert(seasonal_rows).execute()
 print(f"  {len(seasonal_rows)} rows written.")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# game_stats — preserve youtube_url values already in Supabase, then full replace
-# Once you start adding YouTube links, those live in Supabase only (not in the CSV).
-# This script fetches them first and re-applies them after the replace.
+# game_stats — full replace from CSV (CSV is the source of truth for all fields)
 # ─────────────────────────────────────────────────────────────────────────────
 print("Syncing game_stats...")
-
-# Fetch any youtube_url values already saved (keyed by date + game_type)
-existing = client.table("game_stats").select("date, game_type, youtube_url").execute()
-youtube_lookup = {
-    (r["date"], r["game_type"]): r["youtube_url"]
-    for r in existing.data
-    if r.get("youtube_url")
-}
-if youtube_lookup:
-    print(f"  Preserving {len(youtube_lookup)} existing YouTube URL(s).")
 
 client.table("game_stats").delete().neq("id", 0).execute()
 
@@ -87,9 +75,7 @@ game_rows = []
 for _, row in df_games.iterrows():
     date_str = str(row["Date"])
     game_type = row["Game_Type"]
-    # CSV takes priority; fall back to any URL already saved in Supabase
-    csv_url = row.get("Youtube_URL") if pd.notna(row.get("Youtube_URL")) else None
-    youtube_url = csv_url or youtube_lookup.get((date_str, game_type))
+    youtube_url = row.get("Youtube_URL") if pd.notna(row.get("Youtube_URL")) else None
 
     game_rows.append(
         {
