@@ -17,4 +17,4 @@ Season_Code,Season_Name,Year,Organization,Game_Type,Games_Played,Goals,Assists,N
 2, Summer, 2025, "Special - Mens",                         11v11,      1,  0, 1,Non-league refereed matches.
 1, Spring, 2026, "OCSL Preseason",                         11v11,      1,  0, 0,Pre-season match before summer.
 1, Spring, 2026, "OCSL Preseason",                         7v7,        1,  0, 0,Pre-season match before summer.
-2, Summer, 2026, "OCSL - OT2",                             11v11,      1,  0, 0,Current season
+2, Summer, 2026, "OCSL - OT2",                             11v11,      2,  0, 0,Current season.
